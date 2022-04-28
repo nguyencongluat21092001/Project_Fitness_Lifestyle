@@ -45,7 +45,7 @@
 					<div class="col-md-12">
 						<ul id="fh5co-portfolio-list">
 							@foreach ($posts as $post)
-							<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(storage/images/trainer/{{$post->post_image}}); ">
+							<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(storage/images/traine/{{$post->post_image}}); ">
 								<a>
 
 									<div class="case-studies-summary" style="text-align: center">

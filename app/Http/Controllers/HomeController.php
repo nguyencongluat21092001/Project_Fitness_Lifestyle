@@ -13,18 +13,17 @@ class HomeController extends Controller
         $packs = Pack::where('post_category','sale off')->get();
         $posts = Post::all();
         $proPacks = Pack::all();
-        $blogs = Blog::where('post_category','Phòng tập')->get();
         $trainer = Post::where('post_experience','5')->get();
         $comment = Contact::where('post_view','1')->get();
 
         // $proPacks = Pack::where('post_category','pro')->get();
-        return  view("front.index", compact('posts','packs','proPacks','trainer','blogs','comment'));
+        return  view("front.index", compact('posts','packs','proPacks','trainer','comment'));
     }
     public function search()
     {
         $search_text = $_GET['search'];
         $productcategory = Blog::where('post_content','LIKE','%'.$search_text.'%')->get();
-    
+
 
         return view("front.search",compact('productcategory'));
     }

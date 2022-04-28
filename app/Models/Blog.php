@@ -9,7 +9,15 @@ class Blog extends Model
 {
     use HasFactory;
     protected $table = 'tbl_blog';
-    protected $fillable = [ 
-        'post_title','post_category','post_image','post_content','post_link','created_at'
+    protected $fillable = [
+        'post_title','post_category_id','post_image','post_content','post_link'
     ];
+    protected $primarykey = 'id';
+    protected $guarded = [];
+
+    public function blogcategory()
+    {
+    return $this->belongsTo(BlogCategory::class,'post_category_id','id');
+    //--------------------- Name Models , FK ,PK  ---------------------//
+    }
 }

@@ -4,7 +4,7 @@
 @extends('front.Admin.Layout.app')
 @section('body')
     <!-- Begin Page Content -->
-    
+
                 <div class="container-fluid">
                     <?php
                     $name = Session::get('success');
@@ -14,7 +14,7 @@
                     ?>
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Danh sách huấn luyện viên</h1>
-                  
+
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -40,7 +40,7 @@
                                             <td>{{$post->id}}</td>
                                             <td>{{$post->post_name}}</td>
                                             <td>{{$post->post_age}}</td>
-                                            <td><img src="storage/images/trainer/{{$post->post_image}}" width="100px"></td>
+                                            <td><img src="storage/images/traine/{{$post->post_image}}" width="100px"></td>
                                             <td>{{$post->post_introduce}}</td>
                                             <td>{{$post->post_experience}}</td>
                                             <td ><div  style="height:100%;display: flex;justify-content:center;">

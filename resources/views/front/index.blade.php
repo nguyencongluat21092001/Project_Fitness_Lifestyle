@@ -62,7 +62,7 @@
     </div>
 
 
-    <div id="fh5co-blog" class="fh5co-bg-section">
+    {{-- <div id="fh5co-blog" class="fh5co-bg-section">
         <div class="container" id="container">
             <div class="container-title-garary"><h2>HỆ THỐNG PHÒNG TẬP BẬC NHẤT</h2></div>
             <p>Fitness Lifrstyle mong muốn tạo ra môi trường tập luyện và thư giãn lý tưởng, đem lại sức sống mới và cân bằng cho cuộc sống của hội viên. Với đội ngũ huấn luyện viên, giáo viên chuyên nghiệp kinh nghiệm lâu năm, có bằng cấp quốc tế,  chúng tôi luôn mong muốn đóng góp tích cực cho sự phát triển sức khỏe cộng đồng.</p>
@@ -88,7 +88,7 @@
                                 <h2>CÁC GÓI TẬP SIÊU ƯU ĐÃI</h2>
                             </div>
                             - Khuyến mãi giảm giá tập ở Fitness khu vực Hà nội và tp HCM, giá tập gym ở Fitness. Cập nhật các chương trình khuyến mãi của Fitness, đánh giá phòng tập.
-                            Khuyến Mãi Giảm Giá Tập Gym, Yoga Ở Fitness & Yoga Nếu bạn đang muốn giảm cân & tăng cường sức khỏe, thì các bài tập tại Fitness sẽ 
+                            Khuyến Mãi Giảm Giá Tập Gym, Yoga Ở Fitness & Yoga Nếu bạn đang muốn giảm cân & tăng cường sức khỏe, thì các bài tập tại Fitness sẽ
                             giúp bạn làm điều này. Đến với phòng tập Fitness, bạn sẽ được hướng dẫn bởi các huấn luyện viên chuyên nghiệp.
                         </div>
                         <div class="row row-bottom-padded-md">
@@ -117,7 +117,7 @@
                 </div>
             </div>
             <div id="fh5co-gallery">
-                
+
                 <div class="container-title-garary"><h2>HUẤN LUYỆN VIÊN</h2></div>
                 <div class="row">
                 </div>
@@ -147,10 +147,10 @@
                 </div>
             </div>
         </div>
-        
-    </div>
 
-    
+    </div> --}}
+
+
 
     <div id="body-comments">
         <div class="container">
@@ -158,7 +158,7 @@
               <div class="col-12">
                 <div class="comments">
                   <div class="comments-details">
-                    <span class="total-comments comments-sort">Bình luận</span> 
+                    <span class="total-comments comments-sort">Bình luận</span>
                   </div>
                   <div class="comment-box add-comment">
                     <span class="commenter-pic">
@@ -171,19 +171,19 @@
                     </span>
                   </div>
                   @foreach ($comment as $post)
-                      
-                  
+
+
                   <div class="comment-box">
                     <span class="commenter-pic">
                       <img src="https://picsum.photos/200" class="img-fluid">
                     </span>
                     <span class="commenter-name">
                       <a href="#">👤{{$post->post_name}}</a> <span class="comment-time">{{$post->created_at}}</span>
-                    </span>       
+                    </span>
                     <p class="comment-txt more">{{$post->post_comment}}</p>
                     <div class="comment-meta my-3">
-                     
-                      <button class="comment-reply reply-popup btn btn-default"><i class="fa fa-reply-all" aria-hidden="true"></i>Xem</button>         
+
+                      <button class="comment-reply reply-popup btn btn-default"><i class="fa fa-reply-all" aria-hidden="true"></i>Xem</button>
                     </div>
                     <div class="comment-box add-comment reply-box">
                       <p class="commenter-name">

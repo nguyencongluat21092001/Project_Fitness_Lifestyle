@@ -82,6 +82,10 @@ Route::get('/Fat1',[HomeController::class,'fat1']);//fat1
 Route::get('/Thin1',[HomeController::class,'thin1']);//thin1
 Route::get('/Thin2',[HomeController::class,'thin2']);//thin2
 Route::get('/Thin3',[HomeController::class,'thin3']);//thin3
+
+
+
+
 // dashboard-blog
 Route::middleware(['auth:sanctum', 'verified'])->get('/addBlog',[BlogController::class,'addblog']);
     //Route::get('/addBlog',[BlogController::class,'addblog']);
@@ -89,16 +93,26 @@ Route::post('/storeblog',[BlogController::class,'store'])->name('store.blog');
 Route::middleware(['auth:sanctum', 'verified'])->get('/listBlog',[BlogController::class,'listblog'])->name('post.blog');
     //Route::get('/listBlog',[BlogController::class,'listblog'])->name('post.blog');
 Route::get('/blog', [BlogController::class,'blog']);
-Route::get('/blog1', [BlogController::class,'blog1']);
-Route::get('/blog4', [BlogController::class,'blog4']);
-Route::get('/blog3', [BlogController::class,'blog3']);
-Route::get('/blog5', [BlogController::class,'blog5']);
-Route::get('/blog6', [BlogController::class,'blog6']);
 Route::get('/blogindex', [BlogController::class,'blogindex']);
 Route::get('/deleteblog/{id}',[BlogController::class,'delete']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/editBlog/{id}',[BlogController::class,'editBlog'])->name('editBlog');
     //Route::get('/editBlog/{id}',[BlogController::class,'editBlog'])->name('editBlog');
 Route::post('updateBlog/{id}',[BlogController::class,'updateBlog'])->name('updateBlog');
+
+
+
+
+//add-Category_blog
+Route::middleware(['auth:sanctum', 'verified'])->get('/listCategory',[BlogController::class,'listcategory'])->name('list.category');
+Route::get('/addcate', [BlogController::class,'createcategory']);
+Route::post('/addcategory', [BlogController::class,'addcategory'])->name('add.category');
+Route::get('/deletecate/{id}',[BlogController::class,'deletecate']);
+
+
+
+
+
+
 //dashboard-contact
 Route::get('/addcontact',[ContactController::class,'addcontact']);
 Route::post('/storecontact',[ContactController::class,'store'])->name('store.contact');

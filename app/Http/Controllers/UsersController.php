@@ -15,7 +15,7 @@ class UsersController extends Controller
     //     return view('front.Admin.registerUsers');
     // }
 
-    
+
     public function login(){
         return view('front.loginUsers');
     }
@@ -37,6 +37,7 @@ class UsersController extends Controller
      public function logout(){
         Session::put('post_name',null);
         Session::put('id',null);
+
         return Redirect::to('loginusers');
      }
      public function create(){
@@ -45,12 +46,12 @@ class UsersController extends Controller
      public function store(UsersCreateRequest $usersCreateRequest){
         try{
           Users::create([
-            "post_name"=>$usersCreateRequest->post_name, 
-            "post_phone"=>$usersCreateRequest->post_phone, 
-            "post_email"=>$usersCreateRequest->post_email, 
-            "post_password"=>$usersCreateRequest->post_password, 
-            "post_repeatpassword"=>$usersCreateRequest->post_repeatpassword, 
-  
+            "post_name"=>$usersCreateRequest->post_name,
+            "post_phone"=>$usersCreateRequest->post_phone,
+            "post_email"=>$usersCreateRequest->post_email,
+            "post_password"=>$usersCreateRequest->post_password,
+            "post_repeatpassword"=>$usersCreateRequest->post_repeatpassword,
+
           ]);
           Session::put('message',"Tạo tài khoản thành công!");
           return redirect()->route('');

@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\BlogCreateRequest;
 use App\Models\Blog;
+use App\Models\BlogCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -12,35 +14,15 @@ class BlogController extends Controller
         $blogs = Blog::all();
         return  view("front.blog", compact('blogs'));
     }
-    // blog-category
-    public function blog1(){
-        $blogs = Blog::where('post_category','Phòng tập')->get();
-        return  view("front.blog1", compact('blogs'));
-    }
-    public function blog3(){
-        $blogs = Blog::where('post_category','Fitness')->get();
-        return  view("front.blog3", compact('blogs'));
-    }
-    public function blog4(){
-        $blogs = Blog::where('post_category','Béo phì')->get();
-        return  view("front.blog4", compact('blogs'));
-    }
-    public function blog5(){
-        $blogs = Blog::where('post_category','Dinh dưỡng')->get();
-        return  view("front.blog5", compact('blogs'));
-    }
-    public function blog6(){
-        $blogs = Blog::where('post_category','Tiểu đường')->get();
-        return  view("front.blog6", compact('blogs'));
-    }
 
     public function listblog(){
         $blogs = Blog::all();
         return  view("front.Admin.listBlog", compact('blogs'));
     }
-    
+
     public function addblog(){
-        return view('front.Admin.addBlog');
+        $category = BlogCategory::all();
+        return view('front.Admin.addBlog',compact('category'));
     }
     public function create(){
         return view('front.Admin.addBlog');
@@ -72,8 +54,9 @@ class BlogController extends Controller
         return redirect()->route('post.blog')->with('success', 'Bạn đã xóa bài viết thành công!');
     }
     public function editBlog($id) {
+        $category = BlogCategory::all();
         $post = DB::table('tbl_blog')->find($id);
-        return view('front.Admin.edit_blog',compact('post'));
+        return view('front.Admin.edit_blog',compact('post','category'));
     }
 
     public function updateBlog(Request $request, $id)
@@ -81,11 +64,11 @@ class BlogController extends Controller
         try{
             $post = Blog::find($id);
             $post->post_title = $request->post_title;
-            $post->post_category = $request->post_category;
-    
+            $post->post_category_id = $request->post_category_id;
+
             $post->post_content = $request->post_content;
             $post->post_link = $request->post_link;
-    
+
             $post->post_image = $request->post_image;
                if($request->hasFile('post_image'))
                {
@@ -101,4 +84,31 @@ class BlogController extends Controller
             return back()->with('message', 'Cập nhật bài viết thất bại, vui lòng nhập đủ thông tin!');
         }
     }
+
+    //category
+    public function listcategory(){
+        $category = BlogCategory::all();
+        return  view("front.Admin.listCategory", compact('category'));
+    }
+    public function createcategory(){
+        return view('front.Admin.addCategory');
+    }
+
+    public function addcategory(BlogCreateRequest $blogCreateRequest){
+        try{
+            BlogCategory::create([
+                "name"=>$blogCreateRequest->name,
+            ]);
+            return redirect()->route('list.category')->with('success', 'Bạn đã thêm mã giảm giá thành công!');
+        }catch(\Exception $ex){
+            return back()->with('message', 'Thêm mã giảm giá thất bại: bạn cần nhập đủ thông tin!');
+        }
+    }
+    public function deletecate($id){
+        BlogCategory::find($id)->delete();
+        return redirect()->route('list.category')->with('success', 'Bạn đã xóa bài viết thành công!');
+    }
+
+
+
 }

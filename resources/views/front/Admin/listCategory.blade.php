@@ -26,31 +26,18 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Tiêu đề</th>
-                                            <th>Loại</th>
-                                            <th>Ảnh</th>
-                                            <th>Nội dung</th>
-                                            <th>Link</th>
-                                            <th>Ngày tạo</th>
-                                            <th>Sửa</th>
+                                            <th>Name</th>
+
                                             <th>Xóa</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                       @foreach ($blogs as $post)
+                                       @foreach ($category as $post)
 
                                         <tr>
                                             <td>{{$post->id}}</td>
-                                            <td>{{$post->post_title}}</td>
-                                            <td>{{$post->blogcategory->name}}</td>
-                                            <td><img src="storage/images/blog/{{$post->post_image}}" width="200px"></td>
-                                            <td>{{$post->post_content}}</td>
-                                            <td>{{$post->post_link}}</td>
-                                            <td>{{$post->created_at}}</td>
-                                            <td ><div  style="height:100%;display: flex;justify-content:center;">
-                                                <button class="btn btn-primary" type="submit" style="margin:85% 0;outline: none;"> <a style=" display:inline-block;" href="{{ route('editBlog',$post->id) }}"><i style="color: #fff"  class="far fa-edit "></i></a></button>
-                                            </div></td>
-                                                <td  style="height:100%;display: flex;justify-content:center;"><button type="button" class="btn btn-danger"  style="margin:80% 0; height:100%"> <a href="deleteblog/{{$post['id']}}"><i  style="color: #fff" class="far fa-trash-alt"></i></button></td>
+                                            <td>{{$post->name}}</td>
+                                            <td  style="height:100%;display: flex;justify-content:center;"><button type="button" class="btn btn-danger"  style="margin:60% 0; height:100%"> <a href="deletecate/{{$post['id']}}"><i  style="color: #fff" class="far fa-trash-alt"></i></button></td>
                                             </tr>
                                         @endforeach
                                     </tbody>

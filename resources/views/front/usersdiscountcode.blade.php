@@ -21,7 +21,7 @@
 	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 	{{-- <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet"> --}}
 
-	
+
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="frontend/css/animate.css">
 	<!-- Icomoon Icon Fonts-->
@@ -61,12 +61,14 @@
 						<ul class="fh5co-social">
 							<div class="dropdown">
 								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:rgb(255, 255, 255)">
-									
+
 									<?php
 									$name = Session::get('post_name');
 									if($name){
 										echo $name;
 									}
+
+
 									?>
 									&nbsp👤
 								</button>
@@ -96,7 +98,7 @@
 									<li><a href="blog6">Tiểu đường</a></li>
 									<li><a href="blog4">Béo phì</a></li>
 									<li><a href="blog1">Phòng tập</a></li>
-									<li><a href="blog3">Fitness</a></li>	
+									<li><a href="blog3">Fitness</a></li>
 								</ul>
 							</li>
 							<li class="has-dropdown">
@@ -109,7 +111,7 @@
 									<li><a href="{{ url ('videotangco') }}">Video tập tăng cơ</a></li>
 								</ul>
 							</li>
-							<li><a href="{{ url ('contact') }}">Liên hệ</a></li>				
+							<li><a href="{{ url ('contact') }}">Liên hệ</a></li>
 						</ul>
 					</div>
 					<div>
@@ -119,7 +121,7 @@
 							</form>
 					</div>
 				</div>
-					
+
 			</div>
 		</div>
 	</nav>
@@ -135,8 +137,8 @@
 			top:0;
 			left:0;
 			width:100%;
-			height:100%;opacity: 1;" width="500%" height="" src="https://www.youtube.com/embed/HMnatoiMdjA?autoplay=1&mute=1&controls=0" 
-		title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+			height:100%;opacity: 1;" width="500%" height="" src="https://www.youtube.com/embed/HMnatoiMdjA?autoplay=1&mute=1&controls=0"
+		title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
 		encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		</div>
 		<div class="container" style="position: absolute;top:0 ;left:0; margin-left:15%">
@@ -192,7 +194,7 @@
 		<div class="container" id="container">
             <div class="row">
 				<h2>RẤT NHIỀU CÁC GÓI KHUYẾN MÃI TRỊ GIÁ LÊN ĐẾN 1.000.000 VND</h2>
-				
+
 		        <div class="pricing">
 					<h3>I.Chương trình khuyến mãi mùa hè cho người muốn giảm cân</h3>
 					<p>&nbsp  Đây là một chương trình luyện tập với mục đích giảm cân để có một cơ thể khỏe đẹp, căng mịn trong mùa hè. Chương trình này kéo dài 6 tháng, có huấn luyện viên cá nhân riêng cho từng nhóm, với những bài tập bài bản và cam kết đạt hiệu quả như mong muốn chỉ sau 6 tháng tập luyện.</p>
@@ -217,7 +219,7 @@
 						  <div class="flex">
 							<div class="bg-yellow-500 text-center border-r-4 border-double w-96">
 							  <div class="p-4">
-								<div class="flex justify-center"> 
+								<div class="flex justify-center">
 								  <img width="150" style="border-radius: 120px;height:150px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAiXkLAOh_SP8TTRD4TN1Ihvkq8m15vUR1WA&usqp=CAU" alt="" />
 								</div>
 								<div>
@@ -240,8 +242,8 @@
 						</div>
 					  </div>
 					</div>
-					  
-					  
+
+
 					@foreach ($packs as $post)
 
 			        <div class="col-md-3 animate-box">
@@ -264,7 +266,7 @@
 	        </div>
         </div>
     </div>
-	
+
 
 	<div class="container mx-auto relative top-10 grid grid-cols-8 gap-8" >
 		<div class="col-span-6 col-start-1">
@@ -325,7 +327,7 @@
 		<div class="mb-4">
 			<img width="270" height="500" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/green-fitness-rollup-banner-design-template-54de60cceb06cf035d189eacc138f663_screen.jpg?ts=1561439839" alt="">
 		</div>
-	
+
 		</div>
 	</div>
 
@@ -453,12 +455,12 @@
 					// console.log(element);
 					element.classList.add('active');
 				}
-				
-				
+
+
 			})
 		})();
 		(function BMR(){
-			
+
 			document.querySelector('#btn-bmr').addEventListener('submit', (e)=>{
 				e.preventDefault();
 				let sex = document.querySelectorAll('[name="radio-stacked"]');
@@ -484,12 +486,12 @@
 					}else{
 						result.innerHTML=Math.round(66 + (13.7 * kg) + (5 * height) - (6.8 * age))+'calo bạn không cần giảm cân';
 					}
-				
+
 				}
 			})
-	
+
 		})()
-		
+
 	</script>
 
 

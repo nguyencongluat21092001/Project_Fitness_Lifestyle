@@ -24,7 +24,7 @@ class BlogCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            "post_title" => 'required',
+            "name" => 'required',
         ];
     }
     public function messages()

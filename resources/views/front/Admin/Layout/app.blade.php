@@ -69,6 +69,7 @@
                     <a class="collapse-item" href="{{ url ('dashboard') }}">Thêm huấn luyện viên</a>
                     <a class="collapse-item" href="{{ url ('addPricing') }}">Thêm gói tập luyện</a>
                     <a class="collapse-item" href="{{ url ('addBlog') }}">Thêm bài viết</a>
+                    <a class="collapse-item" href="{{ url ('addcate') }}">Thêm Thể loại bài viết</a>
                     <a class="collapse-item" href="{{ url ('addVideo') }}">Thêm video</a>
                     <a class="collapse-item" href="{{ url ('addCode') }}">Thêm mã giảm giá</a>
                 </div>

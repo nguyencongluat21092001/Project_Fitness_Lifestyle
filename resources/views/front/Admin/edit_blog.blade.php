@@ -26,12 +26,12 @@
                    value="{{ $post->post_title}}">
         </div>
         <div class="form-group">
-            <select type="text" name="post_category" id="" class="form-control "  style="border-radius: 30px; " >
-                <option value="{{$post->post_category}}">{{$post->post_category}}</option>
-                <option value="Phòng tập">Phòng tập</option>
-                <option value="Fitness">Fitness</option>
-                <option value="Giải trí">Giải trí</option>
-                <option value="Dinh dưỡng">Dinh dưỡng</option>
+            <select type="text" name="post_category_id" id="" class="form-control "  style="border-radius: 30px; ">
+
+                @foreach ($category as $item )
+                <option value="{{$item->id}}">{{$item->name}}</option>
+                @endforeach
+
             </select>
 
         </div>
@@ -60,7 +60,7 @@
         if($name){
             echo $name;
         }else {
-            
+
         }
         ?>
         <div class="flex justify-center">

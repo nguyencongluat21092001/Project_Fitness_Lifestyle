@@ -62,7 +62,7 @@ class PostController extends Controller
             $post->post_image = $request->post_image;
             if($request->hasFile('post_image'))
             {
-                $destination_path = 'public/images/trainer';
+                $destination_path = 'public/images/traine';
                 $image = $request->file('post_image');
                 $image_name = $image->getClientOriginalName();
                 $path = $request->file('post_image')->storeAs($destination_path,$image_name);

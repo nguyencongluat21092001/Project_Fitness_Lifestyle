@@ -24,16 +24,13 @@
                                        name="post_title"c aria-describedby="name"
                                         placeholder="Tiêu đề">
                                 </div>
-
                                 <div class="form-group">
-                                    <select type="text" name="post_category" id="" class="form-control "  style="border-radius: 30px; " >
-                                        <option value="Giải trí">Thể loại</option>
-                                        <option value="Phòng tập">Phòng tập</option>
-                                        <option value="Tiểu Đường">Tiểu Đường</option>
-                                        <option value="Béo phì">Béo phì</option>
-                                        <option value="Fitness">Fitness</option>
-                                        <option value="Giải trí">Giải trí</option>
-                                        <option value="Dinh dưỡng">Dinh dưỡng</option>
+                                    <select type="text" name="post_category_id" id="" class="form-control "  style="border-radius: 30px; " >
+
+                                        @foreach ($category as $item )
+                                        <option value="{{$item->id}}">{{$item->name}}</option>
+                                        @endforeach
+
                                     </select>
 
                                 </div>
@@ -49,8 +46,8 @@
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user"
-                                        name="create_at" aria-describedby="price"
-                                        placeholder="Ngày tạo">
+                                        name="created_at" aria-describedby="price"
+                                        placeholder="Thời gian">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user"
@@ -62,7 +59,7 @@
                                 if($name){
                                     echo $name;
                                 }else {
-                                    
+
                                 }
                                 ?>
                                 <div class="flex justify-center">
