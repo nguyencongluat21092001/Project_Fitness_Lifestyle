@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\PackCreateRequest;
 use App\Models\Pack;
+use App\Models\PackCategory;
 use Illuminate\Http\Request;
 
 
@@ -29,12 +30,13 @@ class PricingController extends Controller
         return view('front.cart',compact('packs'));
     }
     public function create(){
-        return view('front.Admin.addPricing');
+        $catePack = PackCategory::all();
+        return view('front.Admin.addPricing',compact('catePack'));
     }
     public function store(PackCreateRequest $packCreateRequest){
         try{
             Pack::create([
-                "post_category"=>$packCreateRequest->post_category,
+                "post_category_id"=>$packCreateRequest->post_category_id,
                 "post_price"=>$packCreateRequest->post_price,
                 "post_month"=>$packCreateRequest->post_month,
                 "post_cardio"=>$packCreateRequest->post_cardio,
@@ -63,7 +65,7 @@ class PricingController extends Controller
     {
         try{
             $post = Pack::find($id);
-            $post->post_category = $request->post_category;
+            $post->post_category_id = $request->post_category_id;
             $post->post_price = $request->post_price;
 
             $post->post_month = $request->post_month;
@@ -83,4 +85,49 @@ class PricingController extends Controller
         }
 
     }
+
+
+
+
+    //PackCategory
+    public function deletecatepack($id){
+        PackCategory::find($id)->delete();
+        return redirect()->route('post.catepack')->with('success', 'Bạn đã xóa thể loại thành công!');
+    }
+    public function listpackcate(){
+        $catePack = PackCategory::all();
+        return view('front.Admin.listPackCategory',compact('catePack'));
+    }
+    public function addcatepack(){
+        return view('front.Admin.addCategoryPack');
+    }
+    public function addcatepacks(Request $request){
+        try{
+            $request->validate([
+                "name" =>'required',
+            ]);
+            $input = $request->all();
+            PackCategory::create($input);
+            return redirect()->route('post.catepack')->with('success', 'Bạn đã thêm thể loại thành công!');
+        }
+        catch(\Exception $ex){
+             return back()->with('message', 'Thêm thể loại thất bại: bạn cần nhập đủ thông tin!');
+        };
+    }
+    public function editcatepack($id){
+       $packcate = DB::table('packcategory')->find($id);
+       return view('front.Admin.edit_catepack',compact('packcate'));
+    }
+    public function updatecatepack(Request $request, $id){
+        try{
+            $post = PackCategory::find($id);
+            $post->name = $request->name;
+            $post->save();
+            return redirect()->route('post.catepack')->with('success', 'Thay đổi kế hoạch thành công!');
+        }catch(\Exception $ex){
+            return back()->with('message', 'Thay đổi kế hoạch thất bại: bạn cần nhập đủ thông tin!');
+        }
+    }
+
+
 }

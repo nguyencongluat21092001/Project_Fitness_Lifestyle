@@ -17,7 +17,7 @@
                           if($name){
                               echo $name;
                           }else {
-                              
+
                           }
                           ?>
                         <div class="card-body">
@@ -43,7 +43,7 @@
                                         @foreach ($packs as $post)
                                         <tr>
                                             <td>{{$post->id}}</td>
-                                            <td>{{$post->post_category}}</td>
+                                            <td>{{$post->packCategory->name}}</td>
                                             <td>{{$post->post_price}}</td>
                                             <td>{{$post->post_month}}</td>
                                             <td>{{$post->post_cardio}}</td>

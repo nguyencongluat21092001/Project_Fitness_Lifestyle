@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -233,7 +234,7 @@
 								  <span class="font-bold uppercase text-4xl">giam {{$post->post_sale}}%</span>
 								</div>
 								<div class="text-center">
-								  <span href="" class="bg-yellow-500 px-12 block py-3 rounded text-white"><button data-id={{$post->post_code}} id="set-code" class="uppercase">mua ngay</button></span>
+								  <span href="" class="bg-yellow-500 px-12 block py-3 rounded text-white"><button data-id={{$post->post_code}} id="set-code" class="uppercase">Sử dụng</button></span>
 								</div>
 							  </div>
 							</div>
@@ -244,7 +245,8 @@
 					</div>
 
 
-					@foreach ($packs as $post)
+
+					{{-- @foreach ($packs as $post)
 
 			        <div class="col-md-3 animate-box">
 				        <div class="price-box">
@@ -261,75 +263,71 @@
 						  <a href="{{ route('cart',$post->id) }}" class="btn btn-select-plan btn-sm">Chọn kế hoạch</a>
 						</div>
 			       </div>
-			   @endforeach
+			   @endforeach --}}
 		       </div>
 	        </div>
         </div>
     </div>
+    {{-- @foreach ($user as $item)
+    <a href="{{route('store.router_training',$item->id)}}">training</a>
+    @endforeach --}}
 
 
-	<div class="container mx-auto relative top-10 grid grid-cols-8 gap-8" >
-		<div class="col-span-6 col-start-1">
-		  <div class="mb-4">
-			<h1 class="font-bold mb-2">
-				3 Phút Tập Bụng 6 Múi Tại Nhà | Dân Thể Hình
-			</h1>
-			<div class="text-xl">
-			  <p>Bạn muốn có cơ bụng 6 múi chuẩn ĐẸP thì hãy xem ngay 6 bài tập bụng trong clip này, đặc biệt bạn có thể tập ở bất cứ đâu mà không cần dụng cụ.</p>
-			</div>
-		  </div>
-		  <div>
-		   <span class="font-medium">XEM CLIP:</span>
-		   <div>
-			 <iframe width="835" height="480" src="https://www.youtube.com/embed/rGrfmv1WaC0?autoplay=1&mute=1&controls=1"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		   </div>
-		  </div>
-		  @foreach ($video as $post)
-		  <div class="my-32">
-			<span class="font-semibold">+{{$post->post_title}}</span>
-			<div class="text-xl">
-				<p> {{$post->created_at}}</p>
-			  </div>
-			<div>
-			  <iframe width="835" height="480" src="https://www.youtube.com/embed/{{$post->post_link}}?autoplay=1&mute=1&controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			</div>
-		  </div>
-		  @endforeach
-		</div>
-		<div class="col-span-2">
-		  <div class="mb-4">
-			  <img width="270" height="500" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/gym-roll-up-banner-design-template-3ce4a5c944efabe82c86b13f52873e44_screen.jpg?ts=1561478427" alt="">
-		  </div>
-		  <div class="mb-4">
-			<img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/yellow-gym-ad-roll-up-banner-design-template-d0ec715151bc8212817bc511aab36528_screen.jpg?ts=1561437206" alt="">
-		  </div>
-		  <div class="mb-4">
-			<img width="270" height="500" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/gym-%26-health-roll-up-banner-design-template-30df02001c34c3bae2a02ae4f9fb6b0f_screen.jpg?ts=1561437226" alt="">
-		</div>
-		<div class="mb-4">
-			<img width="270" height="500" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/fitness-gym-roll-up-banner-design-template-3437568c1d20cbd4c337cfbbd3f46198_screen.jpg?ts=1561435660" alt="">
-		</div>
-		<div class="mb-4">
-			<img width="270" height="500" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZqkaOnzKC5vb4q9iOiCka4VQVaLjJ2iHPwn9KLKDjURtys0_ToyB7yGcf9gmfQFd5rSA&usqp=CAU" alt="">
-		</div>
-		<div class="mb-4">
-			<img width="270" height="500" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/yellow-fitness-gym-roll-up-banner-design-template-416d50f449174d62cc039ee82381e46d_screen.jpg?ts=1561435967" alt="">
-		</div>
-		<div class="mb-4">
-			<img width="270" height="500" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/blue-gym-%26-fitness-roll-up-banner-design-template-3b4b32f90e7f1f139342bd94877cc52d_screen.jpg?ts=1561436117" alt="">
-		</div>
-		<div class="mb-4">
-			<img width="270" height="500" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/yellow-gym-ad-roll-up-banner-design-template-d0ec715151bc8212817bc511aab36528_screen.jpg?ts=1561437206" alt="">
-		</div>
-		<div class="mb-4">
-			<img width="270" height="500" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyER5thDOnRjEtNoU_tkj0907GUKGNNxrw27DQU3O57_Kgf1oErqXaNpK6tcqkCBYA1fE&usqp=CAU" alt="">
-		</div>
-		<div class="mb-4">
-			<img width="270" height="500" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/green-fitness-rollup-banner-design-template-54de60cceb06cf035d189eacc138f663_screen.jpg?ts=1561439839" alt="">
-		</div>
 
-		</div>
-	</div>
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Tất cả Link video</h1>
+    <?php
+    $name = Session::get('success');
+    if($name){
+        echo $name;
+    }else {
+
+    }
+    ?>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" style="text-align: center" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên lộ trình</th>
+                            <th>nội dung</th>
+                            <th>ngày thực hiện</th>
+                            <th>Sửa</th>
+                            <th>Xóa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($data as $datas)
+
+                        <tr>
+                            <td>{{$datas->users->post_name}}</td>
+                            <td>{{$datas->name}}</td>
+                            <td>{{$datas->content}}</td>
+                            <td>{{$datas->created_at}}</td>
+                            <td ><div  style="height:100%;display: flex;justify-content:center;">
+                                <button class="btn btn-primary" type="submit" style="margin:85% 0;outline: none;"> <a style=" display:inline-block;" href=""><i style="color: #fff"  class="far fa-edit "></i></a></button>
+                            </div></td>
+                                <td  style="height:100%;display: flex;justify-content:center;"><button type="button" class="btn btn-danger"  style="margin:92% 0; height:100%"> <a href=""><i  style="color: #fff" class="far fa-trash-alt"></i></button></td>
+
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 
 
 
@@ -421,10 +419,14 @@
 
 	<!-- jQuery -->
 	<script src="frontend/js/jquery.min.js"></script>
+    <script src="frontend/admin/vendor/jquery/jquery.min.js"></script>
+
 	<!-- jQuery Easing -->
 	<script src="frontend/js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
 	<script src="frontend/js/bootstrap.min.js"></script>
+    <script src="frontend/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 	<!-- Waypoints -->
 	<script src="frontend/js/jquery.waypoints.min.js"></script>
 	<!-- Stellar Parallax -->

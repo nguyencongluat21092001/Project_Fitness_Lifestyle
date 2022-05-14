@@ -20,9 +20,9 @@
 	<meta name="twitter:card" content="" />
 	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 	{{-- <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet"> --}}
-	
-		
-	
+
+
+
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="frontend/css/animate.css">
 	<!-- Icomoon Icon Fonts-->
@@ -82,10 +82,6 @@
 								<ul class="dropdown">
 									<li><a href="blog5">Dinh dưỡng</a></li>
 									<li><a href="blog6">Tiểu đường</a></li>
-									<li><a href="blog4">Béo phì</a></li>
-									<li><a href="blog1">Phòng tập</a></li>
-									<li><a href="blog3">Fitness</a></li>
-									
 								</ul>
 							</li>
 							<li class="has-dropdown">
@@ -101,7 +97,7 @@
 							<li><a href="{{ url ('contact') }}">Liên hệ</a></li>
 							<li class="has-dropdown">
 								<a>Login</a>
-								
+
 								<ul class="dropdown">
 									<li><a href="loginusers">Đăng nhập</a></li>
 									<li><a href="registerusers">Đăng ký</a></li>
@@ -109,7 +105,7 @@
 
 								</ul>
 							</li>
-							
+
 						</ul>
 					</div>
 					<div>
@@ -119,7 +115,7 @@
 							</form>
 					</div>
 				</div>
-					
+
 			</div>
 		</div>
 	</nav>
@@ -242,7 +238,7 @@
 		});
 		</script>
 	<script>
-		
+
 		(function activeNavMenu(){
 		const active =	document.querySelectorAll('#forcus-nav-menu ul li');
 			// console.log(active);
@@ -256,12 +252,12 @@
 					// console.log(element);
 					element.classList.add('active');
 				}
-				
-				
+
+
 			})
 		})();
 		(function BMR(){
-			
+
 			document.querySelector('#btn-bmr').addEventListener('submit', (e)=>{
 				e.preventDefault();
 				let sex = document.querySelectorAll('[name="radio-stacked"]');
@@ -287,7 +283,7 @@
 					}else{
 						result.innerHTML=Math.round(66 + (13.7 * kg) + (5 * height) - (6.8 * age))+' calo bạn không cần giảm cân';
 					}
-				
+
 				}
 			})
 		})()

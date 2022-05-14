@@ -18,14 +18,11 @@
                                 @method("POST")
                                 @csrf
                                 <div class="form-group">
-                                    <select type="text" name="post_category" id="" class="form-control "  style="border-radius: 30px; " >
-                                        <option value="Normal">Thể loại</option>
-                                        <option value="Normal">Normal</option>
-                                        <option value="pro">pro</option>
-                                        <option value="bassic">bassic</option>
-                                        <option value="sale off">sale off</option>
+                                    <select type="text" name="post_category_id" id="" class="form-control "  style="border-radius: 30px; " >
+                                        @foreach ($catePack as $item )
+                                        <option value="{{$item->id}}">{{$item->name}}</option>
+                                        @endforeach
                                     </select>
-
                                 </div>
                                 <div class="form-group">
                                     <input type="number" class="form-control form-control-user"
@@ -72,7 +69,7 @@
                                 if($name){
                                     echo $name;
                                 }else {
-                                    
+
                                 }
                                 ?>
                               <div class="flex justify-center">

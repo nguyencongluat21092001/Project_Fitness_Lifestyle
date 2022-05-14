@@ -27,17 +27,21 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Name</th>
+                                            <th>Sửa</th>
 
                                             <th>Xóa</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                       @foreach ($category as $post)
+                                       @foreach ($catePack as $post)
 
                                         <tr>
                                             <td>{{$post->id}}</td>
                                             <td>{{$post->name}}</td>
-                                            <td  style="height:100%;display: flex;justify-content:center;"><button type="button" class="btn btn-danger"  style="margin:60% 0; height:100%"> <a href="deletecate/{{$post['id']}}"><i  style="color: #fff" class="far fa-trash-alt"></i></button></td>
+                                            <td ><div  style="height:100%;display: flex;justify-content:center;">
+                                                <button class="btn btn-primary" type="submit" style="margin:80% 0;outline: none;"> <a style=" display:inline-block;" href="{{ route('editcatepack',$post->id) }}"><i style="color: #fff"  class="far fa-edit "></i></a></button>
+                                            </div></td>
+                                            <td  style="height:100%;display: flex;justify-content:center;"><button type="button" class="btn btn-danger"  style="margin:60% 0; height:100%"> <a href="deletecatepack/{{$post['id']}}"><i  style="color: #fff" class="far fa-trash-alt"></i></button></td>
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -47,7 +51,7 @@
                     </div>
                 </div>
                 <!-- /.container-fluid -->
-                
+
             </div>
             <!-- End of Main Content -->
 

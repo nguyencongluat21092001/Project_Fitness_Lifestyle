@@ -15,8 +15,8 @@ class CreateTblPacksTable extends Migration
     {
         Schema::create('tbl_packs', function (Blueprint $table) {
             $table->id();
-            
-            $table->string('post_category',100);
+
+            $table->string('post_category_id',100)->unsigned();
             $table->string('post_price');
             $table->string('post_month',255);
             $table->string('post_cardio',255);
@@ -25,7 +25,7 @@ class CreateTblPacksTable extends Migration
             $table->string('post_zumba');
             $table->string('post_massage',255);
             $table->string('post_boxing',255);
-           
+
             $table->timestamps();
         });
     }

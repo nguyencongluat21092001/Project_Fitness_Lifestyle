@@ -37,7 +37,7 @@
 
 			        <div class="col-md-3 animate-box">
 				        <div class="price-box">
-					    <h2 class="pricing-plan">{{$post->post_category}}</h2>
+					    <h2 class="pricing-plan">{{$post->packCategory->name}}</h2>
 					        <div class="price"><sup class="text-7xl">{{$post->post_price}}</sup><small>Vnd</small><small>{{$post->post_month}}/Tháng</small></div>
 					       <ul class="classes">
 						      <li>{{$post->post_cardio}}</li>
@@ -101,10 +101,10 @@
 					if($name){
 						echo $name;
 					}else {
-						
+
 					}
 					?>
-				</form>		
+				</form>
 			</div>
 		</div>
 	</div>

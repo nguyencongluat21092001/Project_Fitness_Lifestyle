@@ -106,7 +106,7 @@ class BlogController extends Controller
     }
     public function deletecate($id){
         BlogCategory::find($id)->delete();
-        return redirect()->route('list.category')->with('success', 'Bạn đã xóa bài viết thành công!');
+        return redirect()->route('list.category')->with('success', 'Bạn đã xóa thể loại thành công!');
     }
 
 

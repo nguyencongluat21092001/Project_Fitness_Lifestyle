@@ -68,6 +68,7 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="{{ url ('dashboard') }}">Thêm huấn luyện viên</a>
                     <a class="collapse-item" href="{{ url ('addPricing') }}">Thêm gói tập luyện</a>
+                    <a class="collapse-item" href="{{ url ('addcatepack') }}">Thêm Thể loại gói tập</a>
                     <a class="collapse-item" href="{{ url ('addBlog') }}">Thêm bài viết</a>
                     <a class="collapse-item" href="{{ url ('addcate') }}">Thêm Thể loại bài viết</a>
                     <a class="collapse-item" href="{{ url ('addVideo') }}">Thêm video</a>
@@ -87,6 +88,7 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="{{ url ('dashboard_manager') }}">All huấn luyện viên</a>
                     <a class="collapse-item" href="{{ url ('listPricing') }}">Gói tập</a>
+                    <a class="collapse-item" href="{{ url ('listpackcategory') }}">Thể loại gói tập</a>
                     <a class="collapse-item" href="{{ url ('listBlog') }}">Tất cả bài viết</a>
                     <a class="collapse-item"href="{{ url ('listVideo') }}">Tất cả video</a>
                     <a class="collapse-item"href="{{ url ('listCart') }}">khách sử dụng gói tập</a>

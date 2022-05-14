@@ -53,7 +53,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 Route::get('/post',[PostController::class,'create'])->name('post.create');
 Route::post('store',[PostController::class,'store'])->name('store.post');
-    //Route::get('/dashboard_manager', [PostController::class,'index'])->name('post.index');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard_manager', [PostController::class,'index'])->name('post.index');
 Route::get('/trang-chu', [HomeController::class,'index']);
 Route::get('/trainer', [TrainerController::class,'trainer']);
@@ -62,17 +61,29 @@ Route::middleware(['auth:sanctum', 'verified'])->get('editTrainer/{id}',[PostCon
     //Route::get('editTrainer/{id}',[PostController::class,'editTrainer'])->name('editTrainer');
 Route::post('updateTrainer/{id}', [PostController::class,'updateTrainer'])->name('updateTrainer');
 
+
+
+
 // dashboard-các gói tập
 Route::middleware(['auth:sanctum', 'verified'])->get('/addPricing',[PricingController::class,'create']);
-    //Route::get('/addPricing',[PricingController::class,'create']);
 Route::post('storepack',[PricingController::class,'store'])->name('store.pack');
 Route::middleware(['auth:sanctum', 'verified'])->get('/listPricing',[PricingController::class,'index'])->name('post.pack');
-    //Route::get('/listPricing',[PricingController::class,'index'])->name('post.pack');
 Route::get('/pricing', [PricingController::class,'pricing']);
 Route::get('/deletepricing/{id}',[PricingController::class,'delete']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/editPricing/{id}',[PricingController::class,'editPricing'])->name('editPricing');
     //Route::get('/editPricing/{id}',[PricingController::class,'editPricing'])->name('editPricing');
 Route::post('updatePricing/{id}',[PricingController::class,'updatePricing'])->name('updatePricing');
+
+
+
+//packcategory
+Route::get('listpackcategory',[PricingController::class,'listpackcate'])->name('post.catepack');
+Route::get('/deletecatepack/{id}',[PricingController::class,'deletecatepack']);
+Route::get('addcatepack',[PricingController::class,'addcatepack']);
+Route::post('addcatepacks',[PricingController::class,'addcatepacks'])->name('store.addcatepack');
+Route::get('/editcatepack/{id}',[PricingController::class,'editcatepack'])->name('editcatepack');
+Route::post('updatecatepack/{id}',[PricingController::class,'updatecatepack'])->name('updatecatepack');
+
 
 Route::get('/BMR',[PricingController::class,'BMR']);//BMR
 Route::get('/BMI',[PricingController::class,'BMI']);//BMR
@@ -127,21 +138,23 @@ Route::post('updateContact/{id}',[ContactController::class,'updateContact'])->na
 
 //search
 Route::get('/search', [HomeController::class,'search']);
+
+
 //  cart
 Route::get('/allpacks', [PricingController::class,'pack']);
 Route::get('/cart/{id}',[CartController::class,'cart'])->name('cart');
 Route::get('/addCart',[CartController::class,'create']);
 Route::post('storecart',[CartController::class,'store'])->name('store.cart');
 Route::middleware(['auth:sanctum', 'verified'])->get('/listCart',[CartController::class,'index'])->name('post.cart');
-    //Route::get('/listCart',[CartController::class,'index'])->name('post.cart');
 Route::get('/history',[CartController::class,'history'])->name('post.history');
 Route::get('/deletecart/{id}',[CartController::class,'delete']);
+
+
+
 //video
 Route::middleware(['auth:sanctum', 'verified'])->get('/addVideo',[VideoController::class,'addvideo']);
-    //Route::get('/addVideo',[VideoController::class,'addvideo']);
 Route::post('/storevideo',[VideoController::class,'store'])->name('store.video');
 Route::middleware(['auth:sanctum', 'verified'])->get('/listVideo',[VideoController::class,'listvideo'])->name('post.video');
-    //Route::get('/listVideo',[VideoController::class,'listvideo'])->name('post.video');
 Route::get('/deletevideo/{id}',[VideoController::class,'delete']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/editVideo/{id}',[VideoController::class,'editVideo'])->name('editVideo');
     //Route::get('/editVideo/{id}',[VideoController::class,'editVideo'])->name('editVideo');
@@ -156,14 +169,17 @@ Route::get('/logout',[UsersController::class,'logout']);
 Route::get('/registerusers',[UsersController::class,'create']);
 Route::post('/storeUser',[UsersController::class,'store'])->name('store.users');
 
+// Route::get('router-training/{id}',[UsersController::class,'test'])->name('store.router_training');
+
 
 //giảm giá
 Route::get('/giamgia', [CartController::class,'giamgia']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/listCode',[CartController::class,'Code'])->name('post.code');
-    //Route::get('/listCode',[CartController::class,'Code']);
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/addCode',[CodeController::class,'create']);
 Route::post('/storecode',[CodeController::class,'store'])->name('store.code');
 Route::get('/deletecode/{id}',[CodeController::class,'delete']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/editCode/{id}',[CodeController::class,'editCode'])->name('editCode');
 Route::post('updateCode/{id}',[CodeController::class,'updateCode'])->name('updateCode');
+
+
+

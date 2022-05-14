@@ -9,7 +9,10 @@ class Users extends Model
 {
     use HasFactory;
     protected $table = 'tbl_users';
-    protected $fillable = [ 
+    protected $fillable = [
         'post_name','post_phone','post_email','post_password','post_repeatpassword'
     ];
+    public function routertraining (){
+        return $this->belongsTo(RouterTraining::class,'user_id','id');
+    }
 }

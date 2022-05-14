@@ -10,8 +10,8 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-        $packs = Pack::where('post_category','sale off')->get();
-        $posts = Post::all();
+        $packs = Pack::where('post_category_id','5')->get();
+        $posts = Post::with('');
         $proPacks = Pack::all();
         $trainer = Post::where('post_experience','5')->get();
         $comment = Contact::where('post_view','1')->get();

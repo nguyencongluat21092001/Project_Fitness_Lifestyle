@@ -62,12 +62,12 @@
     </div>
 
 
-    {{-- <div id="fh5co-blog" class="fh5co-bg-section">
+    <div id="fh5co-blog" class="fh5co-bg-section">
         <div class="container" id="container">
             <div class="container-title-garary"><h2>HỆ THỐNG PHÒNG TẬP BẬC NHẤT</h2></div>
             <p>Fitness Lifrstyle mong muốn tạo ra môi trường tập luyện và thư giãn lý tưởng, đem lại sức sống mới và cân bằng cho cuộc sống của hội viên. Với đội ngũ huấn luyện viên, giáo viên chuyên nghiệp kinh nghiệm lâu năm, có bằng cấp quốc tế,  chúng tôi luôn mong muốn đóng góp tích cực cho sự phát triển sức khỏe cộng đồng.</p>
             <div class="row row-bottom-padded-md">
-                @foreach ($blogs as $post)
+                {{-- @foreach ($blogs as $post)
                     <div class="col-lg-4 col-md-4 child-blog-content" >
                         <div class="fh5co-blog animate-box">
                             <a href="#"><img class="img-responsive images-blog" src="storage/images/blog/{{$post->post_image}}" alt=""></a>
@@ -80,7 +80,8 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                @endforeach --}}
+
                 <div class="row">
                     <div class="pricing">
                         <div class="container" id="container">
@@ -97,7 +98,7 @@
 
                             <div class="col-md-3 animate-box">
                                 <div class="price-box">
-                                <h2 class="pricing-plan">{{$post->post_category}}</h2>
+                                <h2 class="pricing-plan">{{$post->packCategory->name}}</h2>
                                     <div class="price"><sup class="text-7xl">{{$post->post_price}}</sup><small>Vnd</small><small >{{$post->post_month}}/Tháng</small></div>
                                    <ul class="classes">
                                       <li>{{$post->post_cardio}}</li>
@@ -107,7 +108,7 @@
                                       <li>{{$post->post_massage}}</li>
                                       <li class="color">{{$post->post_boxing}}</li>
                                   </ul>
-                                  <a href="{{ route('cart',$post->id) }}" class="btn btn-select-plan btn-sm">Chọn kế hoạch</a>
+                                  {{-- <a href="{{ route('cart',$post->id) }}" class="btn btn-select-plan btn-sm">Chọn kế hoạch</a> --}}
                                 </div>
                            </div>
                             @endforeach
@@ -115,6 +116,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
             <div id="fh5co-gallery">
 
@@ -128,7 +130,7 @@
                         <div class="col-md-12">
                             <ul id="fh5co-portfolio-list">
                                 @foreach ($trainer as $post)
-                                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(storage/images/trainer/{{$post->post_image}}); ">
+                                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(storage/images/traine/{{$post->post_image}}); ">
                                         <a>
                                             <div class="case-studies-summary" style="text-align: center">
                                                 <h2 style="color: rgb(253, 253, 253)">{{$post->post_name}}</h2>
@@ -148,7 +150,7 @@
             </div>
         </div>
 
-    </div> --}}
+    </div>
 
 
 

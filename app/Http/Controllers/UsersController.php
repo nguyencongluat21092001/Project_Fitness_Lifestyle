@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Http\Requests\UsersCreateRequest;
 use App\Models\Users;
+use App\Models\RouterTraining;
 use App\Models\Code;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -20,7 +21,7 @@ class UsersController extends Controller
         return view('front.loginUsers');
     }
 
-    public function index(Request $request){
+    public function index(Request $request ){
         $post_email = $request->post_email;
         $post_password = $request->post_password;
         $result = DB::table('tbl_users')->where('post_email',$post_email)->where('post_password',$post_password)->first();
@@ -28,7 +29,9 @@ class UsersController extends Controller
         if($result){
            Session::put('post_name',$result->post_name);
            Session::put('id',$result->id);
-           return Redirect::to('giamgia');
+           $codes = Code::all();
+           $data = RouterTraining::where('user_id',$result->id)->get();
+           return view('front.usersdiscountcode',compact('codes','data'));
         }else{
            Session::put('message',"Tài khoản hoặc mật khẩu đăng nhập không chính xác!");
            return Redirect::to('loginusers');
@@ -63,4 +66,9 @@ class UsersController extends Controller
         Users::find($id)->delete();
         return redirect()->route('post.user');
     }
+    // public function test($id){
+    //     $data = RouterTraining::where('user_id',$id)->get();
+    //     // dd($data);
+    //     return view('front.RouterTraining', compact('data'));
+    // }
 }
