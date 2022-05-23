@@ -28,7 +28,8 @@ class CartController extends Controller
     }
     public function index(){
         $addcart = Cart::all();
-        return view('front.Admin.listCart',compact('addcart'));
+        $sum = Cart::all()->sum('post_price');
+        return view('front.Admin.listCart',compact('addcart','sum'));
     }
     public function code(){
         $codes = Code::all();

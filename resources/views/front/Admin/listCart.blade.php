@@ -13,7 +13,7 @@
                      if($name){
                          echo $name;
                      }else {
-                         
+
                      }
                      ?>
 
@@ -42,7 +42,7 @@
                                          <tr>
                                              <td>{{$post->id}}</td>
                                              <td>{{$post->post_category}}</td>
-                                             <td>{{$post->post_price}}</td>
+                                             <td>{{number_format($post->post_price)}} VND</td>
                                              <td>{{$post->post_month}}</td>
                                              <td>{{$post->post_name}}</td>
                                              <td>{{$post->post_email}}</td>
@@ -55,6 +55,7 @@
                                          @endforeach
                                      </tbody>
                                  </table>
+                                 <Span>Tổng tất cả các gói tập : {{number_format($sum)}} VND</Span>
                              </div>
                          </div>
                      </div>

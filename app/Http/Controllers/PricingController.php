@@ -23,7 +23,10 @@ class PricingController extends Controller
     }
     public function index(){
         $packs = Pack::all();
-        return view('front.Admin.listPricing',compact('packs'));
+        // $sum = Pack::all()->sum('post_price');
+        // dd($sum);
+        return view('front.Admin.listPricing',compact('packs','sum'));
+
     }
     public function pack(){
         $packs = Pack::all();

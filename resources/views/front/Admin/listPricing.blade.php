@@ -44,7 +44,7 @@
                                         <tr>
                                             <td>{{$post->id}}</td>
                                             <td>{{$post->packCategory->name}}</td>
-                                            <td>{{$post->post_price}}</td>
+                                            <td>{{number_format($post->post_price)}}</td>
                                             <td>{{$post->post_month}}</td>
                                             <td>{{$post->post_cardio}}</td>
                                             <td>{{$post->post_swimming}}</td>
@@ -57,10 +57,15 @@
                                                 <button class="btn btn-primary" type="submit" style="margin:85% 0;outline: none;"> <a style=" display:inline-block;" href="{{ route('editPricing',$post->id) }}"><i style="color: #fff"  class="far fa-edit "></i></a></button>
                                             </div></td>
                                             <td  style="height:100%;display: flex;justify-content:center;"><button type="button" class="btn btn-danger"  style="margin:90% 0; height:100%"> <a href="deletepricing/{{$post['id']}}"><i  style="color: #fff" class="far fa-trash-alt"></i></button></td>
+
                                         </tr>
                                         @endforeach
+
+
                                     </tbody>
                                 </table>
+                                
+
                             </div>
                         </div>
                     </div>
